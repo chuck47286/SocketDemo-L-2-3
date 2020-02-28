@@ -16,8 +16,8 @@ public class Server {
         // 服务器要监听
         ServerSocket server = new ServerSocket(2000);
 
-        System.out.println("服务器准备就绪");
-        System.out.println("服务器信息：" + server.getInetAddress() + "P:" + server.getLocalPort());
+        System.out.println("server is ready: ");
+        System.out.println("server Information: " + server.getInetAddress() + "P:" + server.getLocalPort());
 //        System.out.println("客户端信息：" + socket.getLocalAddress() + "P:" + socket.getLocalPort());
         // 等待客户端链接
         for (;;) {
@@ -51,7 +51,7 @@ public class Server {
         public void run() {
             super.run();
             // 打印操作(客户端端点)
-            System.out.println("新客户端链接：" + socket.getInetAddress() +
+            System.out.println("new Client connected: " + socket.getInetAddress() +
                     "P:" + socket.getLocalPort());
             try {
                 // 得到打印流，用于数据输出，服务器会回送数据使用
@@ -69,7 +69,7 @@ public class Server {
                     } else {
                         // 打印到屏幕，并回送一条数据长度
                         System.out.println(str);
-                        socketOutput.println("回送：" + str.length());
+                        socketOutput.println("send back：" + str.length());
                     }
                 } while(flag);
                 socketInput.close();
@@ -86,7 +86,7 @@ public class Server {
                     e.printStackTrace();
                 }
 
-                System.out.println("客户端已退出" +
+                System.out.println("client has closed" +
                         socket.getInetAddress() + "P:" + socket.getPort());
             }
         }

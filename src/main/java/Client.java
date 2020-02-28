@@ -17,9 +17,9 @@ public class Client {
         // 链接本地，端口2000：；超过时间3000ms
         socket.connect(new InetSocketAddress(Inet4Address.getLocalHost(), 2000), 3000);
         // 链接成功
-        System.out.println("已发起服务器链接，并进入后续流程");
-        System.out.println("客户端信息：" + socket.getLocalAddress() + "P:" + socket.getLocalPort());
-        System.out.println("服务器信息：" + socket.getInetAddress() + "P:" + socket.getPort());
+        System.out.println("has been connecting server, and try to connect");
+        System.out.println("client information: " + socket.getLocalAddress() + "P:" + socket.getLocalPort());
+        System.out.println("server information: " + socket.getInetAddress() + "P:" + socket.getPort());
 //        System.out.println();
         try {
             // 发送接收数据
